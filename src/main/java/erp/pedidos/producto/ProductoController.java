@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//Es una ruta de acceso para manejar solicitudes http
 @RequestMapping("/api/producto")
-//Nos permite controlar solicitudes de recursos crusados
 @CrossOrigin({"*"})
 public class ProductoController {
     
@@ -33,7 +31,6 @@ public class ProductoController {
         return service.findAll();
     }
 
-    //Create
     @PostMapping("/")
     public Producto save (@RequestBody Producto entity){
        return service.save(entity);
@@ -49,5 +46,8 @@ public class ProductoController {
         service.deleteById(id);
     }
 
+    @GetMapping("/withCategoria")
+    public List<Object[]> findAllProductosWithCategoria() {
+        return service.findAllProductosWithCategoria();
+    }
 }
-

@@ -10,8 +10,7 @@ public class ProductoService {
     
     @Autowired
     ProductoRepository repository;
-    //CRUD
-    //Delimitador de acceso (public, private) tipo de dato de retorno, nombre del metodo, param,etros de entrada [sentencias]
+
     public Producto save(Producto entity){
         return repository.save(entity);
     }
@@ -26,5 +25,9 @@ public class ProductoService {
 
     public List<Producto> findAll(){
         return repository.findAll();
+    }
+
+    public List<Object[]> findAllProductosWithCategoria() {
+        return repository.findAllProductosWithCategoria();
     }
 }

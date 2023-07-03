@@ -29,3 +29,4 @@ public class Usuario {
     @ManyToOne
     private Almacen idAlmacen;
 } 
+

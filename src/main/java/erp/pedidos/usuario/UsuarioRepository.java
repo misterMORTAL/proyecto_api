@@ -1,9 +1,9 @@
 package erp.pedidos.usuario;
 
 import java.util.List;
-
 import org.springframework.data.repository.CrudRepository;
 
-public interface UsuarioRepository extends CrudRepository <Usuario, Long> {
+public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
     List<Usuario> findAll();
+    Usuario findByCorreoElectronicoAndContrasena(String correoElectronico, String contrasena);
 }
